@@ -26,6 +26,11 @@ subprojects {
         jcenter()
     }
 
+    configurations {
+        all*.exclude group: 'asm', module: 'asm'
+        all*.exclude group: 'asm', module: 'asm-all'
+    }
+
     group = "com.netflix.${githubProjectName}"
 
     sourceSets.test.java.srcDir 'src/main/java'
